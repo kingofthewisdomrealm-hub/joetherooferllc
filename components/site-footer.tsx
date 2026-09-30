@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { navItems } from '@/content/navigation'
 import { regions } from '@/content/regions'
 import { site } from '@/content/site'
-import { hasPhone } from '@/lib/contact'
+import { callHref, hasPhone } from '@/lib/contact'
 
 export function SiteFooter() {
 	return (
@@ -15,7 +15,11 @@ export function SiteFooter() {
 						{site.name}. Your local roofer, backed by {site.covenantName}.
 					</p>
 					<div className='mt-6 space-y-2 text-sm'>
-						{hasPhone() ? <p>{site.phone}</p> : null}
+						{hasPhone() ? (
+							<a className='block hover:text-white' href={callHref()}>
+								{site.phone}
+							</a>
+						) : null}
 						{site.email ? (
 							<a className='underline-offset-4 hover:underline' href={`mailto:${site.email}`}>
 								{site.email}

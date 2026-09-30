@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { CallJoe } from '@/components/call-link'
 import { InspectionForm } from '@/components/inspection-form'
 import { site } from '@/content/site'
-import { hasPhone } from '@/lib/contact'
+import { callHref, hasPhone } from '@/lib/contact'
 import { pageMeta } from '@/lib/metadata'
 
 export const metadata: Metadata = pageMeta(
@@ -21,7 +21,11 @@ export default function ContactPage() {
 				</p>
 				<div className='mt-8 space-y-3'>
 					<CallJoe />
-					{hasPhone() ? <p>{site.phone}</p> : null}
+					{hasPhone() ? (
+						<a className='block underline-offset-4 hover:underline' href={callHref()}>
+							{site.phone}
+						</a>
+					) : null}
 					{site.email ? (
 						<a className='block underline-offset-4 hover:underline' href={`mailto:${site.email}`}>
 							{site.email}

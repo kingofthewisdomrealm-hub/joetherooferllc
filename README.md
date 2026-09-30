@@ -24,7 +24,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | `NEXT_PUBLIC_INSTAGRAM_URL` | Footer link. Hidden until set |
 | `LEAD_WEBHOOK_URL` | Server-only URL that receives inspection requests as JSON |
 
-Without `NEXT_PUBLIC_PHONE`, Call Joe opens the inspection form. Without `LEAD_WEBHOOK_URL`, the form accepts requests in development and refuses them in production so a homeowner is not told a message was delivered when it was not.
+The public number is (772) 410-7170. Set `NEXT_PUBLIC_PHONE` only if that number should change. Without `LEAD_WEBHOOK_URL`, the form accepts requests in development and refuses them in production so a homeowner is not told a message was delivered when it was not.
 
 The webhook body is:
 
@@ -45,7 +45,7 @@ Point that URL at email, SMS, a CRM, or Supabase when you are ready. No vendor i
 
 Do not invent these. Add them in config or env when they are real.
 
-- Public phone and email
+- Public email
 - Covenant Builders website URL
 - Street address, if it should be public
 - Licenses, certifications, and warranties (`content/site.ts` → `credentials`)

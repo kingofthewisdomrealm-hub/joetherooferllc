@@ -3,7 +3,7 @@ export const site = {
 	shortName: 'Joe the Roofer',
 	domain: 'joetherooferllc.com',
 	url: process.env.NEXT_PUBLIC_SITE_URL || 'https://joetherooferllc.com',
-	phone: process.env.NEXT_PUBLIC_PHONE || '',
+	phone: process.env.NEXT_PUBLIC_PHONE || '(772) 410-7170',
 	email: process.env.NEXT_PUBLIC_EMAIL || '',
 	covenantName: 'Covenant Builders',
 	covenantUrl: process.env.NEXT_PUBLIC_COVENANT_URL || '',
