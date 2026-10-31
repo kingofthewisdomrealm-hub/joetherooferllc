@@ -144,16 +144,9 @@
 }
 @layer utilities {
   .text-gold-grad {
-    background: linear-gradient(100deg, #9c7a33 0%, #e8cf94 38%, #c9a25a 62%, #f3dfa8 82%, #a8843a 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    /* Paint the gradient past the tight line box so the J's tail and the f's hook
-       are not cut off; the matching negative margin keeps the letters in place. */
-    padding: 0.12em 0.1em 0.26em;
-    margin: -0.12em -0.1em -0.26em;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
+    /* Solid gold with a soft glow. No background-clip, so no letter can ever be cut off. */
+    color: #dcb86e;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 0.35), 0 0 22px rgb(201 162 90 / 0.28);
   }
   .btn-gold {
     background: linear-gradient(180deg, #e8cf94 0%, #c9a25a 55%, #a8843a 100%);
