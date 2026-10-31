@@ -15,7 +15,7 @@ export function TrustPanel() {
 	return (
 		<div className='grid gap-4 md:grid-cols-2'>
 			<div className='rounded-3xl bg-card p-6 shadow-sm'>
-				<h3 className='font-heading text-3xl text-ink'>What we will publish</h3>
+				<h3 className='font-heading text-3xl text-foreground'>What we will publish</h3>
 				<ul className='mt-4 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2'>
 					{slots.map((slot) => (
 						<li key={slot} className='rounded-2xl bg-muted px-3 py-2'>

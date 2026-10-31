@@ -40,11 +40,11 @@ export default async function RegionPage({
 			<JsonLd data={faqSchema(region.faqs)} />
 			<div className='mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24'>
 				<p className='text-sm text-muted-foreground'>{region.counties.join(' · ')}</p>
-				<h1 className='mt-3 max-w-3xl font-heading text-5xl text-ink md:text-7xl'>{region.title}</h1>
+				<h1 className='mt-3 max-w-3xl font-heading text-5xl text-foreground md:text-7xl'>{region.title}</h1>
 				<p className='mt-6 max-w-2xl text-lg text-foreground/80'>{region.intro}</p>
 				<p className='mt-4 max-w-2xl text-foreground/80'>{region.detail}</p>
 				<p className='mt-4 max-w-2xl text-muted-foreground'>{region.weather}</p>
-				<h2 className='mt-14 font-heading text-4xl text-ink'>Cities</h2>
+				<h2 className='mt-14 font-heading text-4xl text-foreground'>Cities</h2>
 				<ul className='mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3'>
 					{region.citySlugs.map((citySlug) => {
 						const location = getLocation(citySlug)

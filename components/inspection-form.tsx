@@ -26,7 +26,7 @@ export function InspectionForm() {
 	if (state.done) {
 		return (
 			<div className='rounded-3xl border border-border bg-card p-8 shadow-sm' role='status'>
-				<p className='font-heading text-3xl text-ink'>Joe has the request.</p>
+				<p className='font-heading text-3xl text-foreground'>Joe has the request.</p>
 				<p className='mt-3 text-muted-foreground'>
 					Someone will follow up at the phone or email you gave. If water is coming in right now,
 					call as well.
@@ -81,7 +81,7 @@ export function InspectionForm() {
 			<button
 				type='submit'
 				disabled={pending}
-				className='mt-6 inline-flex h-12 w-full items-center justify-center rounded-full bg-primary px-6 text-base font-medium text-primary-foreground shadow-sm transition duration-200 hover:-translate-y-0.5 disabled:opacity-60'
+				className='mt-6 inline-flex h-12 w-full items-center justify-center rounded-full btn-gold px-6 text-base font-semibold shadow-sm transition duration-200 hover:-translate-y-0.5 disabled:opacity-60'
 			>
 				{pending ? 'Sending…' : 'Have Joe Check My Roof'}
 			</button>

@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMeta(
 export default function AccessibilityPage() {
 	return (
 		<div className='mx-auto max-w-3xl space-y-4 px-5 py-16 text-lg leading-relaxed md:px-8 md:py-24'>
-			<h1 className='font-heading text-5xl text-ink'>Accessibility</h1>
+			<h1 className='font-heading text-5xl text-foreground'>Accessibility</h1>
 			<p>
 				The site is built to work on a phone, with visible text, labeled form fields, and a way to
 				skip to the content. Motion is reduced when your device asks for that.

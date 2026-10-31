@@ -37,7 +37,7 @@ export function LocationView({ location }: { location: Location }) {
 						<CallJoe variant='onDark' />
 						<Link
 							href='/contact#inspection'
-							className='inline-flex h-12 items-center rounded-full bg-white px-6 text-ink'
+							className='inline-flex h-12 items-center rounded-full btn-gold px-6 font-semibold'
 						>
 							Check My Roof
 						</Link>
@@ -47,18 +47,18 @@ export function LocationView({ location }: { location: Location }) {
 			<Reveal>
 				<section className='mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-2 md:px-8'>
 					<div>
-						<h2 className='font-heading text-4xl text-ink'>The houses here</h2>
+						<h2 className='font-heading text-4xl text-foreground'>The houses here</h2>
 						<p className='mt-4 leading-relaxed text-muted-foreground'>{location.housing}</p>
 					</div>
 					<div>
-						<h2 className='font-heading text-4xl text-ink'>The weather</h2>
+						<h2 className='font-heading text-4xl text-foreground'>The weather</h2>
 						<p className='mt-4 leading-relaxed text-muted-foreground'>{location.weather}</p>
 					</div>
 				</section>
 			</Reveal>
 			<section className='bg-card'>
 				<div className='mx-auto max-w-6xl px-5 py-20 md:px-8'>
-					<h2 className='font-heading text-4xl text-ink'>What Joe looks for in {location.name}</h2>
+					<h2 className='font-heading text-4xl text-foreground'>What Joe looks for in {location.name}</h2>
 					<ul className='mt-8 grid gap-3'>
 						{location.issues.map((issue) => (
 							<li key={issue} className='rounded-2xl bg-background px-5 py-4'>
@@ -73,7 +73,7 @@ export function LocationView({ location }: { location: Location }) {
 			</section>
 			<section className='mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[1fr_1fr] md:px-8'>
 				<div>
-					<h2 className='font-heading text-4xl text-ink'>Nearby</h2>
+					<h2 className='font-heading text-4xl text-foreground'>Nearby</h2>
 					<ul className='mt-6 space-y-3'>
 						{nearby.map((item) => (
 							<li key={item.slug}>
@@ -94,7 +94,7 @@ export function LocationView({ location }: { location: Location }) {
 			<section className='bg-muted/50'>
 				<div className='mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-[0.8fr_1.2fr] md:px-8'>
 					<div>
-						<h2 className='font-heading text-4xl text-ink'>Roof problem in {location.name}?</h2>
+						<h2 className='font-heading text-4xl text-foreground'>Roof problem in {location.name}?</h2>
 						<p className='mt-4 text-muted-foreground'>Call Joe.</p>
 					</div>
 					<InspectionForm />

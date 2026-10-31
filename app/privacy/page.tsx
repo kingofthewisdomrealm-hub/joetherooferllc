@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMeta(
 export default function PrivacyPage() {
 	return (
 		<div className='mx-auto max-w-3xl space-y-4 px-5 py-16 text-lg leading-relaxed md:px-8 md:py-24'>
-			<h1 className='font-heading text-5xl text-ink'>Privacy</h1>
+			<h1 className='font-heading text-5xl text-foreground'>Privacy</h1>
 			<p>
 				The inspection form asks for your name, phone, email, property address, and a note about the
 				roof. That information is used to respond to you.

@@ -33,7 +33,7 @@ export default async function StormEventPage({
 	return (
 		<div className='mx-auto max-w-3xl px-5 py-16 md:px-8'>
 			<p className='text-sm text-muted-foreground'>{storm.date}</p>
-			<h1 className='mt-3 font-heading text-5xl text-ink'>{storm.name}</h1>
+			<h1 className='mt-3 font-heading text-5xl text-foreground'>{storm.name}</h1>
 			<p className='mt-6 text-lg'>{storm.summary}</p>
 			<ul className='mt-6 list-disc space-y-2 pl-5'>
 				{storm.whatToLookFor.map((item) => (

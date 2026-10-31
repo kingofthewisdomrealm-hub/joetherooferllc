@@ -16,7 +16,7 @@ export default function AboutPage() {
 		<div className='mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-2 md:px-8 md:py-24'>
 			<div>
 				<p className='text-sm text-muted-foreground'>The roofer you actually know by name.</p>
-				<h1 className='mt-3 font-heading text-5xl text-ink md:text-7xl'>About Joe</h1>
+				<h1 className='mt-3 font-heading text-5xl text-foreground md:text-7xl'>About Joe</h1>
 				<div className='mt-8 space-y-5 text-lg leading-relaxed text-foreground/80'>
 					<p>
 						If your roof has a problem, call Joe. That is the whole idea. You should know who is

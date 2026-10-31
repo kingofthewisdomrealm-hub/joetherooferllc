@@ -15,7 +15,7 @@ export default function ContactPage() {
 	return (
 		<div className='mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[0.8fr_1.2fr] md:px-8 md:py-24'>
 			<div>
-				<h1 className='font-heading text-5xl text-ink md:text-7xl'>Contact</h1>
+				<h1 className='font-heading text-5xl text-foreground md:text-7xl'>Contact</h1>
 				<p className='mt-4 text-lg text-muted-foreground'>
 					Roof problem? Call Joe. If a number is not published yet, the form is the way to reach him.
 				</p>

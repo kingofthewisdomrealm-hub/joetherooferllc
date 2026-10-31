@@ -32,7 +32,7 @@ export default function StormPage() {
 					</h1>
 					<Link
 						href='#inspection'
-						className='mt-8 inline-flex h-12 w-fit items-center rounded-full bg-white px-6 text-ink'
+						className='mt-8 inline-flex h-12 w-fit items-center rounded-full btn-gold px-6 font-semibold'
 					>
 						Check My Roof
 					</Link>
@@ -42,7 +42,7 @@ export default function StormPage() {
 				<ol className='space-y-8'>
 					{steps.map(([title, body], index) => (
 						<li key={title}>
-							<p className='font-heading text-3xl text-ink'>
+							<p className='font-heading text-3xl text-foreground'>
 								{index + 1}. {title}
 							</p>
 							<p className='mt-2 text-muted-foreground'>{body}</p>

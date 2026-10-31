@@ -4,7 +4,7 @@ export function ReviewList() {
 	if (!reviews.length) {
 		return (
 			<div className='rounded-3xl border border-dashed border-border bg-card/60 p-8'>
-				<p className='font-heading text-3xl text-ink'>Homeowner reviews will live here.</p>
+				<p className='font-heading text-3xl text-foreground'>Homeowner reviews will live here.</p>
 				<p className='mt-3 max-w-xl text-muted-foreground'>
 					Only real reviews will be published. None are shown until they exist. This block is ready
 					for Google reviews later.

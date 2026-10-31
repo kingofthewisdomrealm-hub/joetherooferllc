@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMeta(
 export default function ServiceAreasPage() {
 	return (
 		<div className='mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24'>
-			<h1 className='font-heading text-5xl text-ink md:text-7xl'>Service areas</h1>
+			<h1 className='font-heading text-5xl text-foreground md:text-7xl'>Service areas</h1>
 			<p className='mt-4 max-w-2xl text-lg text-muted-foreground'>
 				Orlando to the Space Coast to the Treasure Coast. Each city page is written for that place.
 				Counties are covered on the regional pages, not as extra copies of the same paragraph.
@@ -22,7 +22,7 @@ export default function ServiceAreasPage() {
 				{regions.map((region) => (
 					<section key={region.slug} className='rounded-3xl border border-border bg-card p-6 md:p-8'>
 						<div className='flex flex-wrap items-end justify-between gap-3'>
-							<h2 className='font-heading text-4xl text-ink'>{region.name}</h2>
+							<h2 className='font-heading text-4xl text-foreground'>{region.name}</h2>
 							<Link className='underline-offset-4 hover:underline' href={`/${region.slug}`}>
 								{region.title}
 							</Link>

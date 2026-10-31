@@ -11,6 +11,7 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from '@/components/ui/sheet'
+import { CrownMark } from '@/components/crown-mark'
 import { navItems } from '@/content/navigation'
 import { site } from '@/content/site'
 
@@ -18,12 +19,15 @@ export function SiteHeader() {
 	return (
 		<header className='sticky top-0 z-40 border-b border-border/80 bg-background/90 backdrop-blur-md'>
 			<div className='mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 md:h-20 md:px-8'>
-				<Link href='/' className='min-w-0'>
-					<span className='block font-heading text-xl leading-none text-ink md:text-2xl'>
-						Joe the Roofer
+				<Link href='/' className='flex min-w-0 items-center gap-3'>
+					<CrownMark className='h-7 w-8 shrink-0 text-gold md:h-8 md:w-9' />
+					<span className='min-w-0'>
+					<span className='block font-heading text-xl leading-none font-semibold text-foreground md:text-2xl'>
+						Joe the <span className='text-gold-grad'>Roofer</span>
 					</span>
 					<span className='mt-1 block text-[11px] tracking-wide text-muted-foreground uppercase'>
 						Backed by {site.covenantName}
+					</span>
 					</span>
 				</Link>
 				<nav className='hidden items-center gap-6 lg:flex' aria-label='Primary'>
@@ -33,7 +37,7 @@ export function SiteHeader() {
 							<Link
 								key={item.href}
 								href={item.href}
-								className='text-sm text-foreground/80 transition hover:text-foreground'
+								className='text-sm tracking-wide text-foreground/80 transition hover:text-gold-light'
 							>
 								{item.label}
 							</Link>

@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMeta(
 export default function TermsPage() {
 	return (
 		<div className='mx-auto max-w-3xl space-y-4 px-5 py-16 text-lg leading-relaxed md:px-8 md:py-24'>
-			<h1 className='font-heading text-5xl text-ink'>Terms</h1>
+			<h1 className='font-heading text-5xl text-foreground'>Terms</h1>
 			<p>
 				The pages on this site explain how to reach Joe the Roofer LLC and what kinds of roofing work
 				the company does. They are not a contract, a quote, or a promise about insurance.
