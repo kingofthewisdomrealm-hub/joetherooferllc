@@ -148,6 +148,12 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    /* Paint the gradient past the tight line box so the J's tail and the f's hook
+       are not cut off; the matching negative margin keeps the letters in place. */
+    padding: 0.12em 0.1em 0.26em;
+    margin: -0.12em -0.1em -0.26em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
   .btn-gold {
     background: linear-gradient(180deg, #e8cf94 0%, #c9a25a 55%, #a8843a 100%);
