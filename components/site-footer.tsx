@@ -31,7 +31,7 @@ export function SiteFooter() {
 					</div>
 				</div>
 				<div>
-					<p className='text-xs tracking-[0.18em] text-white/50 uppercase'>Visit</p>
+					<p className='text-xs tracking-[0.18em] text-white/50 uppercase'>Pages</p>
 					<ul className='mt-4 space-y-2 text-sm'>
 						{navItems.map((item) => (
 							<li key={item.href}>

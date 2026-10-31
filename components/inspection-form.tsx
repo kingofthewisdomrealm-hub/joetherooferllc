@@ -28,8 +28,8 @@ export function InspectionForm() {
 			<div className='rounded-3xl border border-border bg-card p-8 shadow-sm' role='status'>
 				<p className='font-heading text-3xl text-foreground'>Joe has the request.</p>
 				<p className='mt-3 text-muted-foreground'>
-					Someone will follow up at the phone or email you gave. If water is coming in right now,
-					call as well.
+					Joe will call you back at the number you gave. If water is coming in right now, call
+					him too.
 				</p>
 			</div>
 		)
@@ -62,7 +62,7 @@ export function InspectionForm() {
 					</div>
 				))}
 				<div className='grid gap-2'>
-					<Label htmlFor='message'>What happened / How can Joe help?</Label>
+					<Label htmlFor='message'>What&apos;s going on with the roof?</Label>
 					<Textarea
 						id='message'
 						name='message'
@@ -70,7 +70,7 @@ export function InspectionForm() {
 						rows={5}
 						aria-invalid={Boolean(state.fieldErrors?.message)}
 						className='min-h-32 rounded-xl bg-background px-4 py-3'
-						placeholder='Leak, storm, second opinion, or you are not sure yet.'
+						placeholder='A leak, storm damage, a second opinion, or you are just not sure.'
 					/>
 					{state.fieldErrors?.message ? (
 						<p className='text-sm text-destructive'>{state.fieldErrors.message}</p>

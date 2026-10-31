@@ -3,51 +3,52 @@ import Link from 'next/link'
 import { CrownMark } from '@/components/crown-mark'
 import { CallJoe } from '@/components/call-link'
 import { InspectionForm } from '@/components/inspection-form'
-import { ProjectGallery } from '@/components/project-gallery'
 import { Reveal } from '@/components/reveal'
 import { ReviewList } from '@/components/review-list'
 import { ServiceGrid } from '@/components/service-grid'
 import { TrustPanel } from '@/components/trust-panel'
 import { photos } from '@/content/photos'
-import { regions } from '@/content/regions'
-import { services } from '@/content/services'
 import { reviews } from '@/content/reviews'
+import { services } from '@/content/services'
 import { credentials, site } from '@/content/site'
 
-const moments = [
-	['Roof leaking?', 'Call Joe.'],
-	['Storm just came through?', 'Call Joe.'],
-	['Not sure if you need a new roof?', 'Call Joe.'],
-	['Want a second opinion?', 'Call Joe.'],
-]
-
 const steps = [
-	['1 — Call Joe', 'Tell him what’s going on.'],
-	['2 — Joe checks the roof', 'He gets up there and photographs what he finds.'],
-	['3 — Get a straight answer', 'Repair it, replace it, keep an eye on it, or leave it alone. In plain words.'],
-	['4 — Joe’s team does the work', 'Only if you want it done. No pressure either way.'],
+	['Call Joe', 'Tell him what you noticed. A stain, a drip, a storm, or just a bad feeling.'],
+	['Joe gets on the roof', 'He looks at the whole thing and photographs what he finds.'],
+	['You get a straight answer', 'Repair it, replace it, watch it, or leave it alone. In plain words.'],
+	['You decide', 'If you want the work done, his team does it. No pressure either way.'],
 ]
 
-const stormSteps = [
-	'Wind or hail came through.',
-	'The worst damage is usually the part you can’t see from the driveway.',
-	'Joe gets on the roof and looks.',
-	'He photographs what he finds, so you see it too.',
-	'You decide what to do next, with the facts in hand.',
+const joe = [
+	'Answers his own phone',
+	'Gets on the roof himself',
+	'Shows you photos of what he found',
+	'Tells you when it can wait',
 ]
+
+const covenant = [
+	'A Florida certified building contractor',
+	'Crews and equipment for bigger jobs',
+	'Repairs past the roof: decking, ceilings, walls',
+	'The same team from first call to last nail',
+]
+
+const homeServices = services.filter((service) => service.slug !== 'residential')
+
+function Rule() {
+	return <div className='gold-rule mb-5 w-20' aria-hidden='true' />
+}
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+	return <p className='mb-3 text-xs font-semibold tracking-[0.25em] text-gold uppercase'>{children}</p>
+}
 
 export function HomePage() {
 	return (
 		<>
+			{/* Hero */}
 			<section className='relative min-h-[100svh] overflow-hidden bg-ink text-paper'>
-				<Image
-					src={photos[0].src}
-					alt={photos[0].alt}
-					fill
-					priority
-					className='object-cover'
-					sizes='100vw'
-				/>
+				<Image src={photos[0].src} alt={photos[0].alt} fill priority className='object-cover' sizes='100vw' />
 				<div className='sunset-glow absolute inset-0' />
 				<div className='absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/25' />
 				<div className='absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/30 to-transparent' />
@@ -82,191 +83,133 @@ export function HomePage() {
 				</div>
 			</section>
 
+			{/* The promise */}
 			<Reveal>
-				<section className='mx-auto grid max-w-6xl gap-10 px-5 py-24 md:grid-cols-[1fr_1fr] md:px-8 md:py-32'>
-					<div>
-						<div className='gold-rule mb-5 w-20' aria-hidden='true' />
-<h2 className='font-heading text-5xl leading-none text-foreground md:text-6xl'>
-							Big-company capability.
-							<br />
-							Family-business attention.
-						</h2>
+				<section className='mx-auto max-w-4xl px-5 py-24 text-center md:px-8 md:py-32'>
+					<div className='flex justify-center'>
+						<Rule />
 					</div>
-					<div className='space-y-5 text-lg leading-relaxed text-foreground/80'>
-						<p>
-							Joe the Roofer was built around a simple idea: homeowners shouldn&apos;t have to chase
-							their roofer. You should know who you&apos;re calling, who&apos;s helping you, and
-							who&apos;s responsible for getting the job done.
-						</p>
-						<p>
-							And when a roof job turns into more than a roof job, {site.covenantName} is right behind
-							him.
-						</p>
-						<p className='text-foreground'>You don&apos;t need another salesperson. You need a roofer who picks up the phone.</p>
-					</div>
+					<h2 className='font-heading text-5xl leading-none text-balance text-foreground md:text-6xl'>
+						We don&apos;t want to sell you a roof.
+						<br />
+						<span className='text-gold-grad'>We want to tell you what yours needs.</span>
+					</h2>
+					<p className='mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-foreground/80'>
+						Most people call a roofer already braced for a sales pitch. Joe works the other way. If it can be
+						repaired, he says so. If it needs replacing, he shows you why. If nothing&apos;s wrong, you hear
+						that too.
+					</p>
 				</section>
 			</Reveal>
 
+			{/* Services */}
 			<section className='bg-card'>
 				<div className='mx-auto max-w-6xl px-5 py-24 md:px-8'>
-					<div className='mb-10 flex items-end justify-between gap-6'>
-						<div className='gold-rule mb-5 w-20' aria-hidden='true' />
-<h2 className='font-heading text-5xl text-foreground'>The work</h2>
-						<Link href='/roofing' className='text-sm underline-offset-4 hover:underline'>
-							Roofing services
+					<div className='mb-10 flex flex-wrap items-end justify-between gap-6'>
+						<div>
+							<Rule />
+							<h2 className='font-heading text-5xl text-foreground'>What Joe does</h2>
+						</div>
+						<Link href='/roofing' className='text-sm text-gold-light underline-offset-4 hover:underline'>
+							All roofing services →
 						</Link>
 					</div>
-					<ServiceGrid services={services} />
+					<ServiceGrid services={homeServices} compact />
 				</div>
 			</section>
 
+			{/* How it works */}
 			<section className='mx-auto max-w-6xl px-5 py-24 md:px-8'>
-				<div className='grid gap-4 md:grid-cols-2'>
-					{moments.map(([prompt, line]) => (
-						<div key={prompt} className='rounded-3xl border border-gold/25 bg-gradient-to-br from-card to-ink px-8 py-10 text-paper shadow-[0_20px_60px_-30px_rgb(201_162_90_/_0.45)]'>
-							<p className='text-white/70'>{prompt}</p>
-							<p className='mt-3 font-heading text-5xl font-semibold'><span className='text-gold-grad'>{line}</span></p>
+				<Rule />
+				<h2 className='max-w-3xl font-heading text-5xl text-balance text-foreground'>One call. One roofer. One straight answer.</h2>
+				<ol className='mt-12 grid gap-4 md:grid-cols-4'>
+					{steps.map(([title, body], index) => (
+						<li key={title} className='rounded-3xl border border-border bg-card p-6'>
+							<span className='font-heading text-4xl text-gold'>{index + 1}</span>
+							<h3 className='mt-4 font-heading text-2xl text-foreground'>{title}</h3>
+							<p className='mt-2 text-sm leading-relaxed text-muted-foreground'>{body}</p>
+						</li>
+					))}
+				</ol>
+			</section>
+
+			{/* Joe + Covenant */}
+			<section className='bg-ink text-paper'>
+				<div className='mx-auto max-w-6xl px-5 py-24 md:px-8'>
+					<Rule />
+					<h2 className='max-w-3xl font-heading text-5xl text-balance md:text-6xl'>
+						Your neighbor, with a construction company behind him.
+					</h2>
+					<p className='mt-6 max-w-2xl text-lg text-white/80'>
+						When you call, you get Joe. Not a call center, and not a different salesman every visit.
+					</p>
+					<div className='mt-12 grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch'>
+						<div className='rounded-3xl border border-gold/20 bg-white/5 p-8'>
+							<Eyebrow>Joe the Roofer</Eyebrow>
+							<ul className='mt-4 space-y-3 text-lg'>
+								{joe.map((item) => (
+									<li key={item}>{item}</li>
+								))}
+							</ul>
+						</div>
+						<div className='flex items-center justify-center font-heading text-4xl text-gold'>+</div>
+						<div className='rounded-3xl border border-gold/20 bg-white/5 p-8'>
+							<Eyebrow>{site.covenantName}</Eyebrow>
+							<ul className='mt-4 space-y-3 text-lg'>
+								{covenant.map((item) => (
+									<li key={item}>{item}</li>
+								))}
+							</ul>
+						</div>
+					</div>
+					<p className='mt-10 max-w-3xl text-lg leading-relaxed text-white/80'>
+						If the problem stops at the shingles, Joe handles it. If the water already got into the decking or
+						the ceiling, {site.covenantName} is already on the job. You don&apos;t start over with a stranger.
+					</p>
+					<Link href='/about' className='mt-6 inline-block text-gold-light underline-offset-4 hover:underline'>
+						About Joe →
+					</Link>
+				</div>
+			</section>
+
+			{/* Storm banner */}
+			<section className='mx-auto max-w-6xl px-5 py-24 md:px-8'>
+				<div className='grid items-center gap-8 rounded-3xl border border-gold/30 bg-gradient-to-br from-card to-ink p-8 md:grid-cols-[1.4fr_1fr] md:p-12'>
+					<div>
+						<Eyebrow>Storm came through?</Eyebrow>
+						<h2 className='font-heading text-4xl text-foreground md:text-5xl'>
+							Your house isn&apos;t another claim number.
+						</h2>
+						<p className='mt-4 max-w-xl text-foreground/80'>
+							The worst damage is usually the part you can&apos;t see from the driveway. Joe gets on the roof,
+							photographs what he finds, and you decide what to do next.
+						</p>
+					</div>
+					<div className='flex md:justify-end'>
+						<Link
+							href='/storm-damage'
+							className='inline-flex h-12 items-center rounded-full btn-gold px-6 font-semibold'
+						>
+							Check My Roof After a Storm
+						</Link>
+					</div>
+				</div>
+			</section>
+
+			{/* Photos */}
+			<section className='mx-auto max-w-6xl px-5 pb-24 md:px-8'>
+				<Rule />
+				<h2 className='font-heading text-5xl text-foreground'>Real roofs. No stock photos.</h2>
+				<div className='mt-8 grid grid-cols-2 gap-3 md:grid-cols-4'>
+					{photos.slice(1, 5).map((photo) => (
+						<div key={photo.src} className='relative aspect-[4/3] overflow-hidden rounded-2xl'>
+							<Image src={photo.src} alt={photo.alt} fill className='object-cover' sizes='(min-width: 768px) 25vw, 50vw' />
 						</div>
 					))}
 				</div>
-			</section>
-
-			<section className='mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 md:grid-cols-2 md:px-8'>
-				<div className='relative aspect-[4/3] overflow-hidden rounded-3xl'>
-					<Image src={photos[1].src} alt={photos[1].alt} fill className='object-cover' sizes='(min-width: 768px) 50vw, 100vw' />
-				</div>
-				<Reveal>
-					<p className='text-sm font-semibold tracking-[0.25em] text-gold uppercase'>Family business</p>
-					<div className='gold-rule mb-5 w-20' aria-hidden='true' />
-<h2 className='mt-3 font-heading text-5xl leading-none text-foreground'>
-						Roofing is the business.
-						<br />
-						Family is the foundation.
-					</h2>
-					<p className='mt-6 text-lg leading-relaxed text-foreground/80'>
-						Joe the Roofer is a family business, and it runs on one thing: your neighbors trusting the
-						name enough to pass it along. That only happens if Joe treats your house like his own.
-					</p>
-					<p className='mt-4 text-muted-foreground'>
-						When you call, you get Joe. Not a call center, and not a different salesman every visit.
-					</p>
-					<Link href='/about' className='mt-6 inline-block underline-offset-4 hover:underline'>
-						About Joe
-					</Link>
-				</Reveal>
-			</section>
-
-			<section className='bg-ink text-paper'>
-				<div className='mx-auto max-w-6xl px-5 py-24 md:px-8'>
-					<div className='gold-rule mb-5 w-20' aria-hidden='true' />
-<h2 className='font-heading text-5xl md:text-6xl'>Backed by {site.covenantName}</h2>
-					<div className='mt-12 grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch'>
-						<div className='rounded-3xl bg-white/10 p-8'>
-							<p className='text-xs font-semibold tracking-[0.25em] text-gold uppercase'>Joe the Roofer</p>
-							<ul className='mt-6 space-y-3 text-lg'>
-								<li>Answers his own phone</li>
-								<li>Gets on the roof himself</li>
-								<li>Shows you photos of what he found</li>
-								<li>Tells you when it can wait</li>
-							</ul>
-						</div>
-						<div className='flex items-center justify-center font-heading text-4xl text-sand'>+</div>
-						<div className='rounded-3xl bg-white/10 p-8'>
-							<p className='text-xs font-semibold tracking-[0.25em] text-gold uppercase'>{site.covenantName}</p>
-							<ul className='mt-6 space-y-3 text-lg'>
-								<li>A Florida certified building contractor</li>
-								<li>Crews and equipment for bigger jobs</li>
-								<li>Repairs that go past the roof: decking, ceilings, walls</li>
-								<li>The same team from first call to last nail</li>
-							</ul>
-						</div>
-					</div>
-					<div className='mt-8 rounded-3xl border border-gold/40 bg-card px-8 py-10 text-foreground'>
-						<p className='text-sm font-semibold tracking-[0.25em] text-gold uppercase'>Why it matters</p>
-						<p className='mt-3 font-heading text-4xl md:text-5xl'>
-							One roofer who knows your house. A real construction company behind him.
-						</p>
-						<p className='mt-4 max-w-2xl text-foreground/80'>
-							If the problem stops at the shingles, Joe handles it. If the water already got into the decking or
-							the ceiling, {site.covenantName} is already part of the job. You don&apos;t start over with a stranger.
-						</p>
-						{site.covenantUrl ? (
-							<a className='mt-6 inline-block underline-offset-4 hover:underline' href={site.covenantUrl}>
-								{site.covenantName}
-							</a>
-						) : null}
-					</div>
-				</div>
-			</section>
-
-			<section className='mx-auto grid max-w-6xl gap-12 px-5 py-24 md:grid-cols-2 md:px-8'>
-				<div>
-					<p className='text-sm text-muted-foreground'>Storm came through? Let&apos;s check the roof.</p>
-					<div className='gold-rule mb-5 w-20' aria-hidden='true' />
-<h2 className='mt-3 font-heading text-5xl text-foreground'>Your house isn&apos;t another claim number.</h2>
-					<ol className='mt-8 space-y-4'>
-						{stormSteps.map((step, index) => (
-							<li key={step} className='flex gap-4'>
-								<span className='font-heading text-2xl text-gold'>{index + 1}</span>
-								<span className='pt-1'>{step}</span>
-							</li>
-						))}
-					</ol>
-					<Link
-						href='/storm-damage'
-						className='mt-8 inline-flex h-12 items-center rounded-full bg-primary px-6 text-primary-foreground'
-					>
-						Check My Roof
-					</Link>
-				</div>
-				<div className='relative min-h-80 overflow-hidden rounded-3xl'>
-					<Image src={photos[4].src} alt={photos[4].alt} fill className='object-cover' sizes='(min-width: 768px) 50vw, 100vw' />
-				</div>
-			</section>
-
-			<section className='bg-card'>
-				<div className='mx-auto max-w-6xl px-5 py-24 md:px-8'>
-					<div className='gold-rule mb-5 w-20' aria-hidden='true' />
-<h2 className='max-w-3xl font-heading text-5xl text-foreground'>One call. One roofer. One answer.</h2>
-					<div className='mt-10 grid gap-4 md:grid-cols-4'>
-						{steps.map(([title, body], index) => (
-							<div key={title} className='rounded-3xl bg-background p-5'>
-								<div className='relative mb-5 aspect-[4/3] overflow-hidden rounded-2xl'>
-									<Image
-										src={photos[index % photos.length].src}
-										alt={photos[index % photos.length].alt}
-										fill
-										className='object-cover'
-										sizes='(min-width: 768px) 25vw, 100vw'
-									/>
-								</div>
-								<h3 className='font-heading text-2xl text-foreground'>{title}</h3>
-								<p className='mt-2 text-sm text-muted-foreground'>{body}</p>
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
-
-			<section className='mx-auto max-w-4xl px-5 py-24 text-center md:px-8 md:py-32'>
-				<div className='gold-rule mb-5 w-20' aria-hidden='true' />
-<h2 className='font-heading text-5xl leading-none text-foreground md:text-6xl'>
-					We don&apos;t want to sell you a roof.
-					<br />
-					We want to tell you what your roof actually needs.
-				</h2>
-				<p className='mx-auto mt-8 max-w-2xl text-lg text-foreground/80'>
-					Repair it if it can be repaired. Replace it when replacement makes sense. If nothing needs
-					to be done, Joe will say that too.
-				</p>
-			</section>
-
-			<section className='mx-auto max-w-6xl px-5 pb-24 md:px-8'>
-				<div className='gold-rule mb-5 w-20' aria-hidden='true' />
-<h2 className='font-heading text-5xl text-foreground'>Roofs</h2>
-				<div className='mt-8'>
-					<ProjectGallery />
-				</div>
+				<Link href='/projects' className='mt-6 inline-block text-sm text-gold-light underline-offset-4 hover:underline'>
+					More roofs →
+				</Link>
 			</section>
 
 			{reviews.length || credentials.length ? (
@@ -276,23 +219,15 @@ export function HomePage() {
 				</section>
 			) : null}
 
-			<section className='bg-muted/40'>
-				<div className='mx-auto grid max-w-6xl gap-10 px-5 py-24 md:grid-cols-[0.8fr_1.2fr] md:px-8' id='inspection'>
+			{/* Inspection form */}
+			<section className='bg-card'>
+				<div className='mx-auto grid max-w-6xl gap-10 px-5 py-24 md:grid-cols-[0.8fr_1.2fr] md:px-8'>
 					<div>
-						<div className='gold-rule mb-5 w-20' aria-hidden='true' />
-<h2 className='font-heading text-5xl text-foreground'>Have Joe check the roof.</h2>
+						<Rule />
+						<h2 className='font-heading text-5xl text-foreground'>Have Joe check your roof.</h2>
 						<p className='mt-4 text-muted-foreground'>
-							Name, phone, email, the address, and what happened. That is the whole form.
+							Name, phone, email, address, and what&apos;s going on. That&apos;s it. Joe calls you back.
 						</p>
-						<ul className='mt-8 space-y-2 text-sm'>
-							{regions.map((region) => (
-								<li key={region.slug}>
-									<Link className='underline-offset-4 hover:underline' href={`/${region.slug}`}>
-										{region.name} roofing
-									</Link>
-								</li>
-							))}
-						</ul>
 					</div>
 					<InspectionForm />
 				</div>
