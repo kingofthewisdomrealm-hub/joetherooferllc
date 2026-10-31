@@ -24,7 +24,7 @@ export async function deliverLead(lead: Lead): Promise<LeadResult> {
 		return {
 			ok: false,
 			error:
-				'The inspection form is not connected yet. Use the phone number once it is published, or try again after the form is hooked up.',
+				'Sorry, this form is down right now. Please call or text Joe at (772) 410-7170 and he will take care of you.',
 		}
 	}
 
@@ -39,7 +39,7 @@ export async function deliverLead(lead: Lead): Promise<LeadResult> {
 		if (!response.ok) {
 			return {
 				ok: false,
-				error: 'That request did not go through. Please try again in a minute.',
+				error: 'That didn’t go through. Please try again, or call or text Joe at (772) 410-7170.',
 			}
 		}
 
@@ -47,7 +47,7 @@ export async function deliverLead(lead: Lead): Promise<LeadResult> {
 	} catch {
 		return {
 			ok: false,
-			error: 'That request did not go through. Please try again in a minute.',
+			error: 'That didn’t go through. Please try again, or call or text Joe at (772) 410-7170.',
 		}
 	}
 }
