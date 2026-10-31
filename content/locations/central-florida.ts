@@ -233,7 +233,7 @@ export const centralFloridaLocations: Location[] = [
 		description:
 			'Altamonte Springs roofing contractor for 1970s through 1990s neighborhoods. Tree cover, older shingles, and straight storm checks.',
 		intro:
-			'Altamonte Springs is largely built out. The roofs Joe sees are often middle-aged shingle roofs under real tree cover, not brand-new subdivisions. Springs and lakes nearby keep the air wetter than the open fields west of Apopka.',
+			'Altamonte Springs is largely built out. The roofs here are often middle-aged shingle roofs under real tree cover, not brand-new subdivisions. Springs and lakes nearby keep the air wetter than the open fields west of Apopka.',
 		housing:
 			'Ranch houses and two-story homes from the late twentieth century dominate. Architectural shingles are the norm. Tile is less common than in some Orlando communities. Many roofs are on their second or third covering conversation.',
 		weather:

@@ -12,11 +12,11 @@ export const metadata: Metadata = pageMeta(
 )
 
 const steps = [
-	['A storm occurred.', 'Wind, hail, or a night of sideways rain. You do not have to diagnose it from the driveway.'],
+	['A storm occurred.', 'Wind, hail, or a night of sideways rain. You don’t have to figure it out from the driveway.'],
 	['Damage may be hidden.', 'Missing shingles are the obvious part. Lifted edges, open flashing, and bruised decks are not.'],
-	['Joe inspects the property.', 'The check happens on the roof, with the address and what you saw after the weather.'],
-	['Joe documents what is found.', 'You should be able to see the condition, not just hear a pitch.'],
-	['You get clear options.', 'Repair, replacement, keep an eye on it, or do nothing. No insurance promise is attached to that list.'],
+	['Joe inspects the property.', 'Joe gets on the roof. Tell him what you noticed after the weather and he starts there.'],
+	['Joe documents what is found.', 'Photos of what he found, so you see it yourself instead of hearing a pitch.'],
+	['You get clear options.', 'Repair, replace, keep an eye on it, or do nothing. No pressure, and no promises about insurance.'],
 ]
 
 export default function StormPage() {

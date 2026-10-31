@@ -41,7 +41,7 @@ export const treasureCoastLocations: Location[] = [
 		description:
 			'Sebastian roofer near the inlet and the Indian River. Storm checks and plain answers for older neighborhoods and newer houses west of town.',
 		intro:
-			'Sebastian sits at the north end of the Treasure Coast, with the inlet on one side and quieter streets spreading west. Wind off the water and older Florida roofs are the combination Joe sees most.',
+			'Sebastian sits at the north end of the Treasure Coast, with the inlet on one side and quieter streets spreading west. Wind off the water and older Florida roofs are the combination to watch here.',
 		housing:
 			'Closer to the river and the inlet, lots are older and roofs have been patched. West of town, newer houses are mostly architectural shingle. Both need a look at penetrations, not just the field of the shingles.',
 		weather:

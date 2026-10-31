@@ -28,9 +28,8 @@ export default function AboutPage() {
 						needs more than a conversation.
 					</p>
 					<p>
-						Personal service. Professional backing. Family is the foundation. Years in business,
-						family names, and a biography will be added only when Joe writes them. They are not
-						invented here.
+						Joe would rather lose a sale than sell you a roof you don&apos;t need. If it can be repaired,
+						he says so. If it&apos;s fine, he says that too. Neighbors remember that.
 					</p>
 				</div>
 				<div className='mt-8'>

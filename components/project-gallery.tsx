@@ -5,10 +5,6 @@ export function ProjectGallery() {
 	if (!projects.length) {
 		return (
 			<div className='grid gap-8'>
-				<p className='max-w-2xl text-muted-foreground'>
-					These are real roof photos. A project entry with the city, roof type, problem, and what
-					was done is added only when those details are confirmed. Nothing here is a sample job.
-				</p>
 				<PhotoGrid />
 			</div>
 		)

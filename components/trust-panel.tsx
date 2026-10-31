@@ -12,6 +12,8 @@ const slots = [
 ]
 
 export function TrustPanel() {
+	// Hidden until a real license, certification, or warranty is added in content/site.ts.
+	if (!credentials.length) return null
 	return (
 		<div className='grid gap-4 md:grid-cols-2'>
 			<div className='rounded-3xl bg-card p-6 shadow-sm'>
